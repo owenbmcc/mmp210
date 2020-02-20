@@ -32,8 +32,8 @@ function draw() {
 
 	// face area
 
-	x = mouseX;
-	y = mouseY;
+	// x = mouseX;
+	// y = mouseY;
 	ellipse(x, y, s);  // face
 	
 	
@@ -48,9 +48,11 @@ function draw() {
 	// mouth
 	rectMode(CENTER);
 	stroke('#5DADE2');	
-	strokeWeight(2);
+	strokeWeight(5);
 	noFill();
-	rect(x, y + 40, 100, 20, 10);
+
+	var mouthHeight = map(mouseX, 0, width, 10, 150);
+	rect(x, y + 40, 100, mouthHeight, 10);
 
 	// right ear
 	stroke('white');
