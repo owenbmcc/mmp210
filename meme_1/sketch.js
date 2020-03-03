@@ -36,7 +36,7 @@ function draw() {
 	stroke('pink');
 	strokeWeight(20);
 	textStyle(ITALIC);
-	textFont('Segoe UI');
+	textFont('Trade Winds');
 	textAlign(LEFT, CENTER);
 
 	var hello = 'hello world';
