@@ -6,25 +6,56 @@
 // global scope
 var catImage;
 var pantherImage;
+var dogImage;
+
+var counter = 0;
+var instructions = "click here";
+var x;
+var y;
 
 function preload() {
 	catImage = loadImage("cat.jpg");
 	pantherImage = loadImage("panther.jpg");
+	dogImage = loadImage("dog.jpg");
 }
 
 function setup() {
 	var canvas = createCanvas(500, 500);
 	canvas.drawingContext.miterLimit = 2;
+
+	x = width - 150;
+	y = height - 100;
+}
+
+function mousePressed() {
+	counter++;
+	if (counter == 3) {
+		counter = 0;
+	}
+
+	if (mouseX > width/2 && mouseY > height/2) {
+		// bottom right
+		instructions = 'now click here';
+		y = 50;
+	} else if (mouseX > width/2 && mouseY < height/2) {
+		instructions = 'now im over here';
+		x = 50;
+	} else if (mouseX < width/2 && mouseY < height/2) {
+		instructions = 'now im down here';
+		y = height - 100;
+	}
 }
 
 function draw() {
 	background('gray');
 
 	// draw the image
-	if (mouseIsPressed) {
+	if (counter == 0) {
+		image(catImage, 0, 0, width, height);
+	} else if (counter == 1) {
 		image(pantherImage, 0, 0, width, height);
 	} else {
-		image(catImage, 0, 0, width, height);
+		image(dogImage, 0, 0, width, height);
 	}
 
 	textSize(100);
@@ -34,24 +65,11 @@ function draw() {
 	textStyle(ITALIC);
 	textFont('Trade Winds');
 	textAlign(CENTER, CENTER);
-
-	var hello = 'hello world';
-	if (mouseIsPressed) {
-		hello = 'goodbye';
-	}
-	text(hello, 250, 250);
-
 	textSize(30);
 	strokeWeight(5);
 	textStyle(NORMAL);
 	textAlign(CENTER, TOP);
 
-	var welcome = 'welcome to my website hello';
-	var end = map(frameCount, 0, 200, 0, welcome.length);
-	if (mouseIsPressed) {
-		welcome = "I'm a panther.";
-	} else {
-		welcome = "I'm a cat.";
-	}
-	text(welcome, 250, 350);
+	
+	text(instructions, x, y, 150);
 }
