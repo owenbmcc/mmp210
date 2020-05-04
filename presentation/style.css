@@ -1,0 +1,56 @@
+body {
+	background: rgb(0,13,36);
+	background: linear-gradient(65deg, rgba(0,13,36, 1) 0%, rgba(106,9,121,1) 12%, rgba(0,255,7,1) 100%);
+
+	color: white;
+	font-family: Segoe UI, Helvetica;
+	font-size: 20px;
+}
+
+h1, a {
+	font-size: 1.5em;
+}
+
+a {
+	color: white;
+	transition: color 300ms ease-in;
+}
+
+a:hover {
+	color: #6a0979;
+}
+
+
+img {
+	max-width: 100%;
+}
+
+#container {
+	max-width: 640px;
+	margin: 0 auto;
+}
+
+#sketch {
+	max-width: 640px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.link {
+	list-style: none;
+}
+
+button, input {
+	display: block;
+	background: white;
+	border: 2px solid lightblue;
+	border-radius: 3px;
+	font-size: 20px;
+	margin: 5px 0;
+	color: lightblue;
+}
+
+p {
+	margin: 0;
+	color: lightblue;
+}
