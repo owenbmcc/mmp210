@@ -1,35 +1,91 @@
-body {
-	background: rgb(0,13,36);
-	background: linear-gradient(65deg, rgba(0,13,36, 1) 0%, rgba(106,9,121,1) 12%, rgba(0,255,7,1) 100%);
+/* our comment goes in here */
 
-	color: white;
-	font-family: Segoe UI, Helvetica;
-	font-size: 20px;
+/* generic selector */
+
+body {
+	background-color: lightblue;
+	color: white; /* text color */
+	font-family: Andale Mono, monospace;
 }
 
-h1, p, a {
-	font-size: 1.5em;
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	list-style: none;
 }
 
 a {
-	color: white;
-	transition: color 300ms ease-in;
+	color: blue;
+	transition: color 200ms ease-in;
 }
 
+/* psuedo selector - user interacts */
 a:hover {
-	color: #6a0979;
+	color: orangered;
 }
-
 
 img {
-	max-width: 100%;
+	width: 100%;
 }
 
+/* id and class selector */
+
 #container {
-	max-width: 600px;
+	min-width: 320px;
+	max-width: 960px;
 	margin: 0 auto;
 }
 
-.link {
-	list-style: none;
+#header {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+}
+
+/* nested selector */
+#header ul {
+	display: flex;
+}
+
+#header li {
+	margin-left: 1em;
+}
+
+#header a {
+	font-size: 1.5em;
+}
+
+#portfolio {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 1em;
+}
+
+.project {
+	border: 2px solid orangered;
+	padding: 1em;
+	background-color: transparent;
+	transition: background-color 200ms ease-in;
+}
+
+.project:hover {
+	background-color: white;
+}
+
+.project a {
+	font-size: 1.25em;
+}
+
+/* about */
+
+#portrait {
+	width: 200px;
+	float: right;
+}
+
+#about p {
+	font-size: 2em;
 }
