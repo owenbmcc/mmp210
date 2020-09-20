@@ -3,6 +3,8 @@
 	by owen roberts
 */
 
+
+
 // global scope
 var x = 500; // character origin
 var y = 150;
@@ -25,7 +27,7 @@ function draw() {
 	noStroke();
 	fill(faceRed, faceGreen, faceBlue); // purple
 	triangle(x - 120, y - 100, x + 100, y - 90, x, y + 210);
-	
+
 	// eyes
 	fill("LIGHTGOLDENRODYELLOW");
 	circle(x - 70, y, eyeSize); // left
