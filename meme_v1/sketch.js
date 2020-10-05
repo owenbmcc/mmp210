@@ -8,9 +8,11 @@ var title = 'MMP 210';
 var description = 'Draws text to the screen. Displays the information specified in the first parameter on the screen in the position specified by the additional parameters. A default font will be used unless a font is set with the textFont() function and a default size will be used unless a font is set with textSize(). Change the color of the text with the fill() function. Change the outline of the text with the stroke() and strokeWeight() functions.';
 
 var lizardImage;
+var catImage;
 
 function preload() {
 	lizardImage = loadImage('lizard.jpg');
+	catImage = loadImage('cat.jpg');
 }
 
 function setup() {
@@ -21,13 +23,11 @@ function setup() {
 
 function draw() {
 	background(220);
+	blendMode(BLEND);
 
 	/* image */
 	image(lizardImage, 0, 0, width, height/2);
-	image(lizardImage, 0, height/2, width, height/2);
-
-
-
+	image(catImage, 0, height/2, width, height/2);
 
 
 
@@ -52,10 +52,12 @@ function draw() {
 
 	var titleWidth = textWidth(title);
 
-	textSize(14);
+	textSize(40);
 	noStroke();
 	textAlign(LEFT);
 	// textLeading(mouseY);
-	fill(0);
+
+	blendMode(OVERLAY);
+	fill(255, 255, 0);
 	text(description, width / 2 - titleWidth / 2, height / 2 + 40, titleWidth);
 }
